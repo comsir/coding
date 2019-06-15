@@ -8,7 +8,7 @@ import java.util.concurrent.Executors;
 public class myThreadPoolDemo {
     public static void main(String[] args) {
 //        ExecutorService threadPool = Executors.newFixedThreadPool(5);//固定线程数的线程池 值为5
-//          ExecutorService threadPool = Executors.newSingleThreadExecutor();
+//        ExecutorService threadPool = Executors.newSingleThreadExecutor();
         ExecutorService threadPool = Executors.newCachedThreadPool();
         try{
             for (int i = 0; i < 10; i++) {
