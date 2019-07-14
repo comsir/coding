@@ -58,6 +58,14 @@ public class isSymmetricalTree {
     }
 
     //BFS
+    /*
+ BFS使用Queue来保存成对的节点，代码和上面极其相似
+     * 1.出队的时候也是成对成对的
+               1.若都为空，继续；
+                2.一个为空，返回false;
+                3.不为空，比较当前值，值不等，返回false；
+     * 2.确定入队顺序，每次入队都是成对成对的，如left.left， right.right ;left.rigth,right.left
+    * */
     boolean isSymmetricalBFS(TreeNode pRoot) {
         if(pRoot==null) return true;
         Queue<TreeNode> queue = new LinkedList<>();
