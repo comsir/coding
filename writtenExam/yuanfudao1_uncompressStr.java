@@ -8,6 +8,7 @@ package writtenExam;
 * ((A2B)2)2G--AABAABAABAABG
 * (SDSFD)2AA---SDSFDSDSFDAA
 * A2BC4D2---AABCCCCDD
+* ((A3V4)2)2----AAAVVVVAAAVVVVAAAVVVVAAAVVVV
 * 输入：第一行输入正整数C,表示下面有C组数据
 * 之后C行 每一行一个字符串
 *
@@ -41,7 +42,7 @@ public class yuanfudao1_uncompressStr {
                     String numStr = "";
                     //获取到括号内容后 处理括号外的数字
                     while(inStr.charAt(i)=='0')i++;
-                    while(inStr.charAt(i)>='0'&& inStr.charAt(i)<='9') {
+                    while(i<inStr.length() && inStr.charAt(i)>='0'&& inStr.charAt(i)<='9') {
                         numStr = numStr + inStr.charAt(i++);
                     }
                     int num = Integer.parseInt(numStr);
@@ -52,11 +53,10 @@ public class yuanfudao1_uncompressStr {
                     }
                     res = res + NTmpStr;
                 }else {
-                    //遇到字母后面的数字
+                    //3.遇到字母后面的数字
                     String tmpStr = res.charAt(res.length()-1) + "";
                     res = res.substring(0, res.length()-1);
                     String numStr = "";
-                    //获取到括号内容后 处理括号外的数字
                     while(inStr.charAt(i)=='0')i++;
                     while(i<inStr.length() && inStr.charAt(i)>='0'&& inStr.charAt(i)<='9') {
                         numStr = numStr + inStr.charAt(i++);
