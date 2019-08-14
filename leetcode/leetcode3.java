@@ -39,4 +39,24 @@ public class leetcode3 {
         }
         return dp[s.length()];
     }
+/*
+* 这题算法大家都知道，就是一直维护一个最短字串。
+要想更快一些，就是只记录下标，而不是真的额外维护一个字串。
+查找用最原始的for循环字符比较。
+* */
+    public int lengthOfLongestSubstring_fast(String s) {
+        int maxLength = 0;
+        char[] chars = s.toCharArray();
+        int leftIndex = 0;
+        for (int j = 0; j < chars.length; j++) {
+            for (int innerIndex = leftIndex; innerIndex < j; innerIndex++) {
+                if (chars[innerIndex] == chars[j]) {
+                    maxLength = Math.max(maxLength, j - leftIndex);
+                    leftIndex = innerIndex + 1;
+                    break;
+                }
+            }
+        }
+        return Math.max(chars.length - leftIndex, maxLength);
+    }
 }
