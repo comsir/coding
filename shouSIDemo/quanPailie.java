@@ -13,7 +13,7 @@ public class quanPailie {
             return;
         }
         for (int i = 0; i < len; i++) {
-            if(!visited[i]) {
+            if(!visited[i]) { //状态为false 也就是不存在
                 path.push(nums[i]);
                 visited[i] = true;
                 generatePermution(nums, visited, curSize + 1, len, path, res);
